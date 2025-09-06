@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About - E-Waste Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    body { transition: background-color 0.4s ease, color 0.4s ease; }
+    body.dark-mode { background-color: #121212; color: #f1f1f1; }
+    body.dark-mode .card, body.dark-mode .bg-light {
+      background-color: #1e1e1e !important; color: #fff !important;
+    }
+    .navbar-custom { background-color: #28a745 !important; width: 100%; }
+    .navbar-custom .nav-link, .navbar-custom .navbar-brand, .navbar-custom .btn {
+      color: #fff !important;
+    }
+    .navbar-custom .nav-link:hover { color: #d4edda !important; }
+    .highlight-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .about-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header shadow-sm sticky-top animate__animated animate__fadeInDown">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">E-Waste Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+ 
+
+  <main class="container py-5 animate__animated animate__fadeIn">
+    <div class="text-center mb-5">
+      <h1 class="fw-bold text-success">About E-Waste Portal</h1>
+      <p class="lead">Our mission is to promote safe, efficient, and sustainable e-waste disposal while raising awareness about its environmental impact.</p>
+    </div>
+
+    <!-- Who We Are -->
+    <div class="row g-4">
+      <div class="col-md-6">
+        <img src="https://images.pexels.com/photos/19037726/pexels-photo-19037726.jpeg" alt="Electronic Waste Pile" class="about-img shadow animate__animated animate__zoomIn">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <div class="highlight-card p-3 rounded bg-light">
+          <h3 class="fw-bold">Who We Are</h3>
+          <p>We are a passionate team bridging the gap between households, organizations, and certified e-waste recyclers. We bring ease, accessibility, and accountability to e-waste management.</p>
+          <p>Every year, millions of devices become obsolete. We help ensure they are recycled or reused responsibly to protect our planet and reduce environmental harm.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What We Do -->
+    <div class="row g-4 mt-4">
+      <div class="col-md-6 order-md-2">
+        <img src="https://images.pexels.com/photos/3993220/pexels-photo-3993220.jpeg" alt="Recycling Center Workers" class="about-img shadow animate__animated animate__zoomIn">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center order-md-1">
+        <div class="highlight-card p-3 rounded bg-light">
+          <h3 class="fw-bold">What We Do</h3>
+          <p>Our platform simplifies e-waste management by enabling you to:</p>
+          <ul>
+            <li>Schedule convenient doorstep pickups.</li>
+            <li>Locate certified recycling facilities nearby.</li>
+            <li>Report improper disposal cases.</li>
+            <li>Access resources for recycling best practices.</li>
+          </ul>
+          <p>We collaborate with government bodies and recyclers to ensure all electronic waste is processed responsibly and transparently.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why E-Waste Recycling Matters -->
+    <div class="row g-4 mt-4">
+      <div class="col-md-6">
+        <img src="https://images.pexels.com/photos/5691615/pexels-photo-5691615.jpeg" alt="Sorting Electronic Waste" class="about-img shadow animate__animated animate__zoomIn">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <div class="highlight-card p-3 rounded bg-light">
+          <h3 class="fw-bold text-success">Why E-Waste Recycling Matters</h3>
+          <p>E-waste often contains both valuable resources and hazardous substances. Recycling helps us recover metals like gold, silver, and copper while preventing toxins from harming our ecosystems.</p>
+          <p>This practice also supports energy conservation, job creation, and a circular economy where waste becomes a resource.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vision & Values -->
+    <div class="row g-4 mt-4">
+      <div class="col-md-6 order-md-2">
+        <img src="https://images.pexels.com/photos/3735210/pexels-photo-3735210.jpeg" alt="E-Waste Awareness and Sustainability" class="about-img shadow animate__animated animate__zoomIn">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center order-md-1">
+        <div class="highlight-card p-3 rounded bg-light">
+          <h3 class="fw-bold text-success">Our Vision & Values</h3>
+          <ul>
+            <li><strong>Environmental Sustainability:</strong> Creating greener systems for our planet.</li>
+            <li><strong>Transparency:</strong> Clear accountability in every step of recycling.</li>
+            <li><strong>Community Engagement:</strong> Empowering individuals to make eco-conscious choices.</li>
+            <li><strong>Innovation:</strong> Embracing new ideas for better e-waste solutions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer bg-light py-3 mt-auto text-center">
+    &copy; 2025 E-Waste Portal 
+  </footer>
+
+ 
+</body>
+</html>

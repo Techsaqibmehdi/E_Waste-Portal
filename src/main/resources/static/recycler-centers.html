@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Recycling Centers - E-Waste Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar-custom {
+      background-color: #28a745 !important;
+    }
+    .navbar-custom .nav-link,
+    .navbar-custom .navbar-brand {
+      color: #fff !important;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #d4edda !important;
+    }
+    .card {
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="index.html">E-Waste Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pickup-request.html">Request Pickup</a></li>
+          <li class="nav-item"><a class="nav-link" href="complaint.html">Complaint</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="container my-4">
+    <h2 class="fw-bold text-success text-center mb-4">E-Waste Recycling Centers & Dumping Yards</h2>
+    <div class="input-group mb-4">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search centers or cities...">
+      <button class="btn btn-success">Search</button>
+    </div>
+
+    <!-- Centers List -->
+    <div class="row g-4" id="centersList">
+      <!-- Dumping Yard Locations -->
+      <div class="row g-4" id="dumpingYardList">
+
+        <div class="col-md-4 center-card">
+          <div class="card h-100 shadow-sm p-3 border-danger">
+            <h5 class="card-title text-danger">Bhalswa Landfill</h5>
+            <p class="card-text">Delhi’s overfilled landfill, ~62 m high, still receives ~2,300 t/day of waste; severe environmental & health hazard.</p>
+            <p class="text-muted small">📍 
+              <a href="https://www.google.com/maps/search/?api=1&query=Bhalswa+Landfill+Delhi" target="_blank" class="text-decoration-none">
+                Bhalswa Landfill, Delhi
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 center-card">
+          <div class="card h-100 shadow-sm p-3 border-danger">
+            <h5 class="card-title text-danger">Ghazipur Landfill</h5>
+            <p class="card-text">Delhi’s largest landfill (~75 acres, ~65 m height), active beyond capacity with methane emissions and fire risks.</p>
+            <p class="text-muted small">📍 
+              <a href="https://www.google.com/maps/search/?api=1&query=Ghazipur+Landfill+Delhi" target="_blank" class="text-decoration-none">
+                Ghazipur Landfill, Delhi
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 center-card">
+          <div class="card h-100 shadow-sm p-3 border-danger">
+            <h5 class="card-title text-danger">Bhalswa Horseshoe Lake Dump</h5>
+            <p class="card-text">Half of the former Bhalswa horseshoe lake was reclaimed for dumping, leading to wetland destruction and contamination.</p>
+            <p class="text-muted small">📍 
+              <a href="https://www.google.com/maps/search/?api=1&query=Bhalswa+Horseshoe+Lake+Delhi" target="_blank" class="text-decoration-none">
+                Bhalswa Horseshoe Lake Dump, Delhi
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 center-card">
+          <div class="card h-100 shadow-sm p-3 border-danger">
+            <h5 class="card-title text-danger">Pallikaranai / Perungudi Dump Yard</h5>
+            <p class="card-text">Chennai’s official dump in marshland, ~4,500 t/day of waste dumped into wetlands; heavy metal leachate detected.</p>
+            <p class="text-muted small">📍 
+              <a href="https://www.google.com/maps/search/?api=1&query=Pallikaranai+Dump+Yard+Chennai" target="_blank" class="text-decoration-none">
+                Pallikaranai Dump Yard, Chennai
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4 center-card">
+          <div class="card h-100 shadow-sm p-3 border-danger">
+            <h5 class="card-title text-danger">Kishangarh Marble Slurry Dump</h5>
+            <p class="card-text">Rajasthan’s marble slurry disposal site near Kishangarh (~82 acres)—now large white slurry mounds, visually dramatic but hazardous.</p>
+            <p class="text-muted small">📍 
+              <a href="https://www.google.com/maps/search/?api=1&query=Kishangarh+Marble+Slurry+Dump+Yard" target="_blank" class="text-decoration-none">
+                Kishangarh Marble Slurry Dump, Rajasthan
+              </a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Search Functionality
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      let filter = this.value.toLowerCase();
+      let centers = document.querySelectorAll('.center-card');
+      centers.forEach(center => {
+        let title = center.querySelector('.card-title').textContent.toLowerCase();
+        let city = center.querySelector('.text-muted').textContent.toLowerCase();
+        center.style.display = (title.includes(filter) || city.includes(filter)) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

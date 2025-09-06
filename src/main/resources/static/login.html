@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - E-Waste Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/loginwal.jpg') no-repeat center center;
+    background-size: cover;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+.login-card {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+.login-card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2c7a7b;
+    font-weight: 700;
+}
+.register-link {
+    display: block;
+    text-align: center;
+    margin-top: 0.75rem;
+    color: #007bff;
+    cursor: pointer;
+}
+.register-link:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div class="login-card animate_animated animate_fadeInUp">
+  <h3>E-Waste Portal</h3>
+
+  <ul class="nav nav-tabs mb-3" id="loginTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="user-tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab">User Login</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="admin-tab" data-bs-toggle="tab" data-bs-target="#admin" type="button" role="tab">Admin Login</button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="loginTabsContent">
+    <!-- User Login -->
+    <div class="tab-pane fade show active" id="user" role="tabpanel">
+      <form id="userLoginForm">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="userEmail" name="email" placeholder="Enter email" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="userPassword" name="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Login</button>
+      </form>
+      <a class="register-link" href="register.html">Don't have an account? Register</a>
+    </div>
+
+    <!-- Admin Login -->
+    <div class="tab-pane fade" id="admin" role="tabpanel">
+      <form id="adminLoginForm">
+        <div class="mb-3">
+          <label class="form-label">Admin Username</label>
+          <input type="text" class="form-control" id="adminUsername" name="username" placeholder="Enter admin username" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" id="adminPassword" name="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn btn-danger w-100">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Handle User Login with backend API
+document.getElementById("userLoginForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+    const email = document.getElementById("userEmail").value;
+    const password = document.getElementById("userPassword").value;
+
+    try {
+        const response = await fetch("http://localhost:8080/api/users/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert("Login successful!");
+            localStorage.setItem("user", JSON.stringify(result));
+            window.location.href = "index.html";
+        } else {
+            alert("Error: " + result.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Invalid user ! ");
+    }
+});
+
+// Handle Admin Login (dummy redirect for now)
+document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const username = document.getElementById("adminUsername").value;
+    const password = document.getElementById("adminPassword").value;
+
+    if (username && password) {
+        window.location.href = "admin-panel.html";
+    } else {
+        alert("Invalid admin credentials.");
+    }
+});
+</script>
+</body>
+</html>
